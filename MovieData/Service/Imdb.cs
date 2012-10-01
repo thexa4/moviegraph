@@ -4,23 +4,38 @@ using System.Linq;
 using System.Text;
 using MovieData.Data;
 using Newtonsoft.Json.Linq;
+using System.Net;
 using System.IO;
 
 namespace MovieData.Service
 {
-    class Imdb
+    public class Imdb
     {
-        const string Endpoint = "";
+        const string Endpoint = "http://www.omdbapi.com/";
         Library Library { get; set; }
 
         public Imdb(Library library)
         {
-
+            Library = library;
         }
 
-        Movie FindMovie(string title, int year)
+        /// <summary>
+        /// Searches omdbapi for movie by title and year and adds it to the library
+        /// </summary>
+        /// <param name="title">The movie title</param>
+        /// <param name="year">The year</param>
+        public void FindMovie(string title, int year)
         {
-            return null;
+            ParseMovie(new WebClient().DownloadString(Endpoint + "?t=" + title + "&y=" + year.ToString()));
+        }
+
+        /// <summary>
+        /// Searches omdbapi for movie by title and adds it to the library
+        /// </summary>
+        /// <param name="title">The movie title</param>
+        public void FindMovie(string title)
+        {
+            ParseMovie(new WebClient().DownloadString(Endpoint + "?t=" + title));
         }
 
         /// <summary>
