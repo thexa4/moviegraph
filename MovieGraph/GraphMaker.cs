@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using MovieData.Data;
 
 namespace MovieGraph
 {
@@ -11,18 +12,18 @@ namespace MovieGraph
         Stream output;
 
 
-        public GraphMaker(Stream output)
+        public GraphMaker(Stream output, Library lib)
         {
             // TODO: Complete member initialization
             this.output = output;
         }
 
-        internal void MovieGraph(MovieData.Data.Library lib)
+        internal void MovieGraph()
         {
             
         }
 
-        internal void ActorGraph(MovieData.Data.Library lib)
+        internal void ActorGraph()
         {
             throw new NotImplementedException();
         }

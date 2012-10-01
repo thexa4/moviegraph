@@ -14,13 +14,13 @@ namespace MovieGraph
         {
             Stream output = new FileStream();
             Library lib = new Library();
-            var g = new GraphMaker(output);
+            var g = new GraphMaker(output, lib);
             if (args.Length > 0)
             {
                 if (args[0].Equals("movies"))
-                    g.MovieGraph(lib);
+                    g.MovieGraph();
                 else if (args[0].Equals("Actors"))
-                    g.ActorGraph(lib);
+                    g.ActorGraph();
             }
         }
     }
