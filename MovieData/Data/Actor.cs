@@ -7,7 +7,7 @@ namespace MovieGraph.Data
 {
     class Actor
     {
-        string Name { get; set; }
-        List<Movie> Movies { get; protected set; }
+        public string Name { get; set; }
+        public List<Movie> Movies { get; protected set; }
     }
 }

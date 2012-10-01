@@ -7,13 +7,13 @@ namespace MovieGraph.Data
 {
     class Movie
     {
-        string IMDBId { get; set; }
-        string Name { get; set; }
-        int Year { get; set; }
-        List<Actor> Actors { get; protected set; }
-        List<string> Genres { get; protected set; }
-        string Poster { get; set; }
-        float Rating { get; set; }
-        string Plot { get; set; }
+        public string IMDBId { get; set; }
+        public string Name { get; set; }
+        public int Year { get; set; }
+        public List<Actor> Actors { get; protected set; }
+        public List<string> Genres { get; protected set; }
+        public string Poster { get; set; }
+        public float Rating { get; set; }
+        public string Plot { get; set; }
     }
 }
