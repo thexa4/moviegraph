@@ -14,7 +14,7 @@ namespace MovieData.Data
         public Library()
         {
             Movies = new List<Movie>();
-            Actors = new Dictionary<string,Actor>;
+            Actors = new Dictionary<string,Actor>();
         }
     }
 }
