@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MovieData.Data
 {
-    class Actor
+    public class Actor
     {
         public string Name { get; set; }
         public List<Movie> Movies { get; protected set; }

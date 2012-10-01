@@ -6,7 +6,7 @@ using MovieData.Data;
 
 namespace MovieData.Data
 {
-    class Library
+    public class Library
     {
         public List<Movie> Movies { get; protected set; }
         public Dictionary<string, Actor> Actors { get; protected set; }
