@@ -42,7 +42,7 @@ namespace MovieData.Service
         /// Parses omdbapi json and adds it to the Library
         /// </summary>
         /// <param name="json">The movie JSON</param>
-        void ParseMovie(string json)
+        public void ParseMovie(string json)
         {
             JObject j = JObject.Parse(json);
 
@@ -54,18 +54,23 @@ namespace MovieData.Service
                 Name = (string)j["Title"],
                 Year = int.Parse((string)j["Year"]),
                 Poster = (string)j["Poster"],
-                Rating = float.Parse((string)j["Rating"]),
+                Rating = float.Parse((string)j["imdbRating"]),
                 IMDBId = (string)j["imdbID"],
                 Plot = (string)j["Plot"],
             };
 
-            string[] actors = ((string)j["Actors"]).Split(", ".ToCharArray());
+            string[] actors = ((string)j["Actors"]).Split(",".ToCharArray());
             foreach(var actor in actors)
             {
-                if (!Library.Actors.ContainsKey(actor))
-                    Library.Actors.Add(actor, new Actor() { Name = actor });
+                var t = actor.Trim();
 
-                var a = Library.Actors[actor];
+                if (t.Length == 0)
+                    continue;
+
+                if (!Library.Actors.ContainsKey(t))
+                    Library.Actors.Add(t, new Actor() { Name = t });
+
+                var a = Library.Actors[t];
                 m.Actors.Add(a);
                 a.Movies.Add(m);
             }
