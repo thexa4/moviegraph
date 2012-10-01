@@ -12,7 +12,7 @@ namespace MovieGraph
     {
         static void Main(string[] args)
         {
-            Stream output = new FileStream();
+            Stream output = new FileStream("./filename", FileMode.OpenOrCreate);
             Library lib = new Library();
             var g = new GraphMaker(output, lib);
             if (args.Length > 0)

@@ -11,16 +11,19 @@ namespace MovieGraph
     {
         Stream output;
         Library lib;
+        StreamWriter writer;
 
         public GraphMaker(Stream output, Library lib)
         {
             this.lib = lib;
             this.output = output;
+            writer = new StreamWriter(output);
+
         }
 
         internal void MovieGraph()
         {
-            String str = "graph movies {\n";
+            writer.WriteLine("graph movies {");
 
             for (int i = 0; i < lib.Actors.Count; i++)
             {
@@ -28,24 +31,24 @@ namespace MovieGraph
                 foreach (Movie mov in act.Movies)
                     foreach (Movie mov2 in act.Movies)
                         if (mov.Name.CompareTo(mov2.Name) < 0)
-                            str += mov.Name + " -- " + mov2.Name + " [label=" + act.Name + "];\n";
+                            writer.WriteLine(mov.Name + " -- " + mov2.Name + " [label=" + act.Name + "];");
             }
 
-            str += "}";
+            writer.WriteLine("}");
 
         }
 
         internal void ActorGraph()
         {
-            String str = "graph actors {\n";
+            writer.WriteLine("graph actors {");
 
             foreach (Movie mov in lib.Movies)
                 foreach (Actor act in mov.Actors)
                     foreach (Actor act2 in mov.Actors)
                         if (act.Name.CompareTo(act2.Name) < 0)
-                            str += act.Name + " -- " + act2.Name + " [label=" + mov.Name + "];\n";
+                           writer.WriteLine(act.Name + " -- " + act2.Name + " [label=" + mov.Name + "];");
 
-            str += "}";
+            writer.WriteLine("}");
         }
     }
 }
