@@ -11,13 +11,23 @@ namespace MovieData.Service
     class Imdb
     {
         const string Endpoint = "";
+        Library Library { get; set; }
 
-        static Movie FindMovie(string title, int year)
+        public Imdb(Library library)
+        {
+
+        }
+
+        Movie FindMovie(string title, int year)
         {
             return null;
         }
 
-        static Movie ParseMovie(string json)
+        /// <summary>
+        /// Parses omdbapi json and adds it to the Library
+        /// </summary>
+        /// <param name="json">The movie JSON</param>
+        void ParseMovie(string json)
         {
             JObject j = JObject.Parse(json);
 
@@ -34,13 +44,18 @@ namespace MovieData.Service
                 Plot = (string)j["Plot"],
             };
 
-            string[] actors = ((string)j["Actors"]).Split(',');
+            string[] actors = ((string)j["Actors"]).Split(", ".ToCharArray());
             foreach(var actor in actors)
             {
+                if (!Library.Actors.ContainsKey(actor))
+                    Library.Actors.Add(actor, new Actor() { Name = actor });
 
+                var a = Library.Actors[actor];
+                m.Actors.Add(a);
+                a.Movies.Add(m);
             }
 
-            return m;
+            Library.Movies.Add(m);
         }
     }
 }
