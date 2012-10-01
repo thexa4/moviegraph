@@ -9,12 +9,12 @@ namespace MovieData.Data
     class Library
     {
         public List<Movie> Movies { get; protected set; }
-        public List<Actor> Actors { get; protected set; }
+        public Dictionary<string, Actor> Actors { get; protected set; }
 
         public Library()
         {
             Movies = new List<Movie>();
-            Actors = new List<Actor>();
+            Actors = new Dictionary<string,Actor>;
         }
     }
 }
