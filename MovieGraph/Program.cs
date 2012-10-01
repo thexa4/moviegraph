@@ -17,7 +17,7 @@ namespace MovieGraph
             var g = new GraphMaker(output, lib);
             if (args.Length > 0)
             {
-                if (args[0].Equals("movies"))
+                if (args[0].Equals("Movies"))
                     g.MovieGraph();
                 else if (args[0].Equals("Actors"))
                     g.ActorGraph();
