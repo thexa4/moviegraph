@@ -9,11 +9,24 @@ using System.IO;
 
 namespace MovieData.Service
 {
+    /// <summary>
+    /// Queries omdbapi for movies
+    /// </summary>
     public class Imdb
     {
+        /// <summary>
+        /// The api endpoint
+        /// </summary>
         const string Endpoint = "http://www.omdbapi.com/";
+        /// <summary>
+        /// The library to write movies to
+        /// </summary>
         Library Library { get; set; }
 
+        /// <summary>
+        /// Creates a new imdb service
+        /// </summary>
+        /// <param name="library">The library to write to</param>
         public Imdb(Library library)
         {
             Library = library;
