@@ -15,5 +15,11 @@ namespace MovieData.Data
         public string Poster { get; set; }
         public float Rating { get; set; }
         public string Plot { get; set; }
+
+        public Movie()
+        {
+            Actors = new List<Actor>();
+            Genres = new List<string>();
+        }
     }
 }

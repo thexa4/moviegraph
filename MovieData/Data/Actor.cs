@@ -9,5 +9,10 @@ namespace MovieData.Data
     {
         public string Name { get; set; }
         public List<Movie> Movies { get; protected set; }
+
+        public Actor()
+        {
+            Movies = new List<Movie>();
+        }
     }
 }
