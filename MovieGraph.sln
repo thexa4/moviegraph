@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieGraph", "MovieGraph\Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieData", "MovieData\MovieData.csproj", "{24D8B693-FF0D-49E3-9E98-F8DC112BA281}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieGraphTest", "MovieGraphTest\MovieGraphTest.csproj", "{F7FD3E68-B81B-4944-84E6-169EC4D31BCD}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{99E6F9F9-573A-4F02-AF65-A4D1ECC1A245}"
 	ProjectSection(SolutionItems) = preProject
 		Local.testsettings = Local.testsettings
@@ -47,16 +45,6 @@ Global
 		{24D8B693-FF0D-49E3-9E98-F8DC112BA281}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{24D8B693-FF0D-49E3-9E98-F8DC112BA281}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{24D8B693-FF0D-49E3-9E98-F8DC112BA281}.Release|x86.ActiveCfg = Release|Any CPU
-		{F7FD3E68-B81B-4944-84E6-169EC4D31BCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F7FD3E68-B81B-4944-84E6-169EC4D31BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F7FD3E68-B81B-4944-84E6-169EC4D31BCD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{F7FD3E68-B81B-4944-84E6-169EC4D31BCD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{F7FD3E68-B81B-4944-84E6-169EC4D31BCD}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F7FD3E68-B81B-4944-84E6-169EC4D31BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F7FD3E68-B81B-4944-84E6-169EC4D31BCD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F7FD3E68-B81B-4944-84E6-169EC4D31BCD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{F7FD3E68-B81B-4944-84E6-169EC4D31BCD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{F7FD3E68-B81B-4944-84E6-169EC4D31BCD}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
