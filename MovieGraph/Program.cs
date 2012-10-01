@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using MovieData.Data;
 
 
 namespace MovieGraph
@@ -17,9 +18,9 @@ namespace MovieGraph
             if (args.Length > 0)
             {
                 if (args[0].Equals("movies"))
-                    g.MovieGraph();
+                    g.MovieGraph(lib);
                 else if (args[0].Equals("Actors"))
-                    g.ActorGraph();
+                    g.ActorGraph(lib);
             }
         }
     }

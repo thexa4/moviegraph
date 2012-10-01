@@ -16,5 +16,15 @@ namespace MovieGraph
             // TODO: Complete member initialization
             this.output = output;
         }
+
+        internal void MovieGraph(MovieData.Data.Library lib)
+        {
+            
+        }
+
+        internal void ActorGraph(MovieData.Data.Library lib)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
